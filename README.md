@@ -23,7 +23,12 @@ source chtenv/bin/activate
 ```
 pip3 install -r requirements
 ```
-3. Run the python app
+
+3. Make the model by running the `build_model.py` file. This would build the model in your local machine
+```
+python3 build_model.py
+```
+4. Run the python app
 ```
 python3 app.py
 ```
