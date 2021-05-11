@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Output</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+<style>
+    h2{
+        color: whitesmoke;
+        font-size: 40px;
+        margin-left: 300px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #booking {
+	font-family: 'PT Sans', sans-serif;
+	background-image: url('/static/background.jpg');
+	background-size: cover;
+	background-position: center;
+}
+</style>
+</head>
+
+<body>
+	<div id="booking" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="booking-form">
+                        <div class="container col-6 align-self-center”">
+                            <!-- {{ prediction_text }} -->
+                            {% if delay == 0 %}
+                            <h2>The flight is not delayed</h2>
+
+                            {% elif delay == 1 %}
+                            <h2>The flight is delayed</h2>
+                            {% endif %}
+                        </div>
+						    <div class="span8 centering">
+									<div class="form-btn">
+                                        <a href="{{ url_for('index') }}">
+										<button class="submit-btn" value="Redirect">Try Another Flight</button></a>
+									</div>
+								</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

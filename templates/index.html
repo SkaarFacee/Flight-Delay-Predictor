@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Flight Predictor</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet"> 
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/rules.css') }}">
+
+	<style>
+
+	</style>
+	</head>
+	<body>
+		<div class="parallax">
+			<div class="centered">
+					<div class="animated  fadeInDown delay-.5s">
+						<h1>Flight Delay Predictor</h1>
+						<button class="btn"onclick="window.location.href='#rule'">Rules</button>
+						<button class="btn1" onclick="window.location.href='#trynow'">Try now </button>
+						<a href="https://www.google.com"><button class="btn" >Github </button></a>
+					</div>
+			</div>
+		</div>
+		<div class="next_parallax">
+		
+		<form method="POST">
+		<div class="form-group">
+		    <div class="caption text-center " id="trynow">
+				<label for="text" class="animated  fadeInDown delay-.5s"><h2>Enter the details of your flight</h2></label>
+				<br><select class="form-select" name="carrier">
+					<option selected>Select Flight Carrier</option>
+					<option value="AA">American Airlines Inc.</option>
+					<option value="US">US Airways Inc.</option>
+					<option value="F9">Frontier Airlines Inc.</option>
+					<option value="B6">JetBlue Airways</option>
+					<option value="OO">Skywest Airlines Inc.</option>
+					<option value="AS">Alaska Airlines Inc.</option>
+					<option value="NK">Spirit Air Lines</option>
+					<option value="WN">Southwest Airlines Co.</option>
+					<option value="DL">Delta Air Lines Inc.</option>
+					<option value="EV">Atlantic Southeast Airlines</option>
+					<option value="HA">Hawaiian Airlines Inc.</option>
+					<option value="MQ">American Eagle Airlines Inc.</option>
+					<option value="VX">Virgin America</option>
+					<option value="9E">Endeavor Air</option>
+					<option value="FL">AirTran Airways</option>
+					<option value="YV">Mesa Airlines</option>
+				</select><select class="form-select" name="origin">
+					<option selected>Select Origin </option>
+					<option value="LGA">LaGuardia Airport</option>
+					<option value="EWR">Newark Liberty Airport</option>
+					<option value="JFK">John F. Kennedy  Airport</option>
+				</select><select class="form-select" name="dest">
+					<option selected>Select Destination </option>
+					<option value="ATL">Hartsfield-Jackson Atlanta Airport</option>
+					<option value="FLL">Fort Lauderdale-Hollywood Airport</option>
+					<option value="IAD">Dulles Airport</option>
+					<option value="MCO">Orlando Airport</option>
+					<option value="ORD">O'Hare Airport</option>
+					<option value="PBI">Palm Beach Airport</option>
+					<option value="TPA">Tampa Airport</option>
+					<option value="LAX">Los Angeles Airport</option>
+					<option value="SFO">San Francisco Airport</option>
+					<option value="DFW">Dallas Worth  Airport</option>
+					<option value="LAS">McCarran  Airport</option>
+					<option value="MSP">Minneapolis−Saint Paul  Airport</option>
+					<option value="DTW">Detroit Metropolitan Wayne County Airport</option>
+					<option value="MIA">Miami  Airport</option>
+					<option value="RSW">Southwest Florida  Airport</option>
+					<option value="SJU">Luis Muñoz Marín  Airport</option>
+					<option value="PHX">Phoenix Sky Harbor  Airport</option>
+					<option value="IAH">George Bush Intercontinental Airport </option>
+					<option value="BWI">Washington InternationalL Airport</option>
+					<option value="CLT">Charlotte Douglas  Airport</option>
+					<option value="BOS">Boston Logan  Airport</option>
+					<option value="BUF">Buffalo Niagara  Airport</option>
+					<option value="DEN">Denver  Airport</option>
+					<option value="SNA">John Wayne Airport</option>
+					<option value="MSY">Louis Armstrong New Orleans  Airport</option>
+					<option value="SLC">Salt Lake City  Airport</option>
+					<option value="XNA">Northwest Arkansas  Airport	</option>
+					<option value="MKE">General Mitchell  Airport</option>
+					<option value="SEA">Seattle-Tacoma  Airport</option>
+					<option value="ROC">Greater Rochester  Airport</option>
+					<option value="SYR">Syracuse Hancock  Airport</option>
+					<option value="SRQ">Sarasota Bradenton  Airport</option>
+					<option value="RDU">Raleigh-Durham  Airport</option>
+					<option value="CMH">John Glenn Columbus  Airport</option>
+					<option value="JAX">Jacksonville  Airport</option>
+					<option value="CHS">Charleston Airport</option>
+					<option value="MEM">Memphis  Airport</option>
+					<option value="PIT">Pittsburgh  Airport</option>
+					<option value="SAN">San Diego  Airport</option>
+					<option value="DCA">Ronald Reagan Washington  Airport</option>
+					<option value="CLE">Cleveland Hopkins  Airport</option>
+					<option value="STL">St. Louis Lambert  Airport</option>
+					<option value="MYR">Myrtle Beach  Airport</option>
+					<option value="JAC">Jackson Hole Airport</option>
+					<option value="MDW">Chicago Midway  Airport</option>
+					<option value="BNA">Nashville  Airport</option>
+					<option value="STT">Cyril E. King Airport</option>
+					<option value="LGB">Long Beach Airport</option>
+					<option value="SJC">Norman Y. Mineta San Jose  Airport</option>
+					<option value="PWM">Portland  Jetport</option>
+					<option value="CRW">Yeager Airport</option>
+					<option value="OAK">Oakland  Airport</option>
+					<option value="GRR">Gerald R. Ford  Airport</option>
+					<option value="SMF">Sacramento  Airport</option>
+					<option value="BUR">Hollywood Burbank Airport</option>
+					<option value="HNL">Daniel K. Inouye  Airport</option>
+					<option value="AUS">Austin-Bergstrom  Airport</option>
+					<option value="BTV">Burlington  Airport</option>
+					<option value="PHL">Philadelphia  Airport</option>
+					<option value="EGE">Eagle County Regional Airport</option>
+					<option value="AVL">Asheville Regional Airport</option>
+					<option value="SAV">Savannah  Airport</option>
+					<option value="IND">Indianapolis  Airport</option>
+					<option value="CAK">Two</option>
+					<option value="HOU">William P. Hobby Airport</option>
+					<option value="DAY">Dayton  Airport</option>
+					<option value="ALB">Albany  Airport</option>
+					<option value="BDL">Bradley  Airport</option>
+					<option value="MHT">Manchester-Boston Regional Airport</option>
+					<option value="MSN">Dane County Regional Airport</option>
+					<option value="GSO">Piedmont Triad  Airport</option>
+					<option value="CVG">Northern Kentucky  Airport</option>
+					<option value="BQN">Rafael Hernández  Airport</option>
+					<option value="PDX">Portland  Airport</option>
+					<option value="SAT">San Antonio  Airport</option>
+					<option value="ORF">Norfolk  Airport</option>
+					<option value="SDF">Louisville  Airport</option>
+					<option value="MCI">Kansas City  Airport</option>
+					<option value="GSP">Greenville-Spartanburg  Airport</option>
+					<option value="OMA">Eppley Airfield</option>
+					<option value="RIC">Richmond  Airport</option>
+					<option value="TYS">McGhee Tyson Airport</option>
+					<option value="DSM">Des Moines  Airport</option>
+					<option value="PVD">T. F. Green Airport</option>
+					<option value="PSE">Ponce  Airport</option>
+					<option value="TUL">Tulsa  Airport</option>
+					<option value="OKC"> Will Rogers  Airpor</option>
+					<option value="BHM">Birmingham–Shuttlesworth  Airport</option>
+					<option value="CAE">Columbia Metropolitan Airport</option>
+					<option value="HDN">Yampa Valley Regional Airport</option>
+					<option value="MVY">Martha's Vineyard Airport</option>
+					<option value="ILM">Wilmington  Airport</option>
+					<option value="ABQ">Albuquerque  Sunport</option>
+					<option value="BGR">Bangor  Airport</option>
+					<option value="ACK">Nantucket Memorial Airport</option>
+					<option value="PSP">Palm Springs  Airport</option>
+					<option value="EYW">Key West  Airport</option>
+					<option value="MTJ">Montrose Regional Airport</option>
+					<option value="BZN">Bozeman Yellowstone  Airport</option>
+					<option value="ANC">Ted Stevens Anchorage  Airport</option>
+					<option value="TVC">Cherry Capital Airport</option>
+					<option value="CHO">Charlottesville–Albemarle Airport</option>
+					<option value="LEX">black Grass Airport</option>
+					<option value="SBN">TSouth Bend  Airporthree</option>
+				</select><br>  
+				<input type="text" id="temp" name="temp" placeholder="Enter Temperature " style="text-align: center;">
+				<input type="text" id="humid" name="humid" placeholder="Enter Humidity" style="text-align: center;"><br>
+				<input type="text" id="year" name="year" placeholder="Enter Year" style="text-align: center;">
+				<select class="form-select" name="month">
+					<option selected>Select Month </option>
+					<option value="1">January</option>
+					<option value="2">February</option>
+					<option value="3">March</option>
+					<option value="4">April</option>
+					<option value="5">May</option>
+					<option value="6">June</option>
+					<option value="7">July</option>
+					<option value="8">August</option>
+					<option value="9">September</option>
+					<option value="10">October</option>
+					<option value=11">November</option>
+					<option value="12">December</option>
+				</select><select class="form-select" name="day">
+					<option selected>Select Day </option>
+					<option value="1">Monday</option>
+					<option value="2">Tuesday</option>
+					<option value="3">Wednesday</option>
+					<option value="4">Thursday</option>
+					<option value="5">Friday</option>
+					<option value="6">Saturday</option>
+					<option value="7">Sunday</option>
+				</select><br> 
+				<input type="text" id="time" name="time" placeholder="Enter Scheduled Deparure time" style="text-align: center;">
+			</div>
+			<div class="wrap">
+				<button class="button">Submit</button>
+			</div>
+		</form>
+		</div>
+		<div class="parallax">
+			<div class="caption text-center ">
+				<br>
+				<h3>Make sure to follow these rules</h3>
+				<div class="rule" id="rule">
+				<p>The Temperature and Humidity can be decimal values</p>
+				<p>Time should be entered in 24 hour format</p>
+				<p>Make sure to enter all fields</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
