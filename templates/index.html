@@ -7,8 +7,8 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet"> 
-		<link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=ABeeZee&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Advent+Pro&display=swap" rel="stylesheet">
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
 		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/rules.css') }}">
 
@@ -28,12 +28,13 @@
 			</div>
 		</div>
 		<div class="next_parallax">
-		
+
 		<form method="POST">
 		<div class="form-group">
-		    <div class="caption text-center " id="trynow">
-				<label for="text" class="animated  fadeInDown delay-.5s"><h2>Enter the details of your flight</h2></label>
-				<br><select class="form-select" name="carrier">
+		    <div class="caption text-center" id="trynow">
+				<div style="display: inline-block; text-align: left;">
+				<label for="text" class="animated  fadeInDown delay-.5s"><h2>Enter flight details</h2></label>
+				<br><text><strong> Flight details: </strong></text><select class="form-select" name="carrier">
 					<option selected>Select Flight Carrier</option>
 					<option value="AA">American Airlines Inc.</option>
 					<option value="US">US Airways Inc.</option>
@@ -162,9 +163,11 @@
 					<option value="CHO">Charlottesville–Albemarle Airport</option>
 					<option value="LEX">black Grass Airport</option>
 					<option value="SBN">TSouth Bend  Airporthree</option>
-				</select><br>  
-				<input type="text" id="temp" name="temp" placeholder="Enter Temperature " style="text-align: center;">
-				<input type="text" id="humid" name="humid" placeholder="Enter Humidity" style="text-align: center;"><br>
+				</select><br>
+				<text><strong> Weather conditions: </strong></text>
+				<input type="text" id="temp" name="temp" placeholder="Temperature &#8451;" style="text-align: center;">
+				<input type="text" id="humid" name="humid" placeholder="Humidity &#37;" style="text-align: center;"><br>
+				<text><strong> When: </strong></text>
 				<input type="text" id="year" name="year" placeholder="Enter Year" style="text-align: center;">
 				<select class="form-select" name="month">
 					<option selected>Select Month </option>
@@ -178,7 +181,7 @@
 					<option value="8">August</option>
 					<option value="9">September</option>
 					<option value="10">October</option>
-					<option value=11">November</option>
+					<option value="11">November</option>
 					<option value="12">December</option>
 				</select><select class="form-select" name="day">
 					<option selected>Select Day </option>
@@ -189,9 +192,11 @@
 					<option value="5">Friday</option>
 					<option value="6">Saturday</option>
 					<option value="7">Sunday</option>
-				</select><br> 
-				<input type="text" id="time" name="time" placeholder="Enter Scheduled Deparure time" style="text-align: center;">
+				</select><br>
+				<text><strong> Scheduled Departure Time: </strong></text>
+				<input type="text" id="time" name="time" placeholder="24-Hour Format" style="text-align: center;">
 			</div>
+		</div>
 			<div class="wrap">
 				<button class="button">Submit</button>
 			</div>
@@ -200,10 +205,10 @@
 		<div class="parallax">
 			<div class="caption text-center ">
 				<br>
-				<h3>Make sure to follow these rules</h3>
+				<h3>Rules to follow</h3>
 				<div class="rule" id="rule">
-				<p>The Temperature and Humidity can be decimal values</p>
-				<p>Time should be entered in 24 hour format</p>
+				<p>Temperature should be in celcius(&#8451;), & Humidity in percent(%)</p>
+				<p>Time should be in 24 hour format</p>
 				<p>Make sure to enter all fields</p>
 				</div>
 			</div>
