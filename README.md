@@ -1,6 +1,6 @@
 # Flight Delay Predictor
 
-[![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 
 A simple flight delay predictor that can predict whether a flight is delayed or not based on nine inputs. This is a machine learning project.
 
@@ -38,5 +38,3 @@ Now, the app should be running on the localhost, browse to to the link where you
 ## Contributing Help
 If you are really interested in contributing you can always contact the maintainer or even send a PR!
 
-## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
